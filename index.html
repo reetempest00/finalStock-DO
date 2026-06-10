@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SITTA Bahan Ajar UT</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <h1>Sistem Bahan Ajar UT</h1>
+
+        <div class="tab-menu">
+
+            <button @click="tab='stok'">
+                📚 Stok
+            </button>
+
+            <button @click="tab='tracking'">
+                🚚 Tracking DO
+            </button>
+
+        </div>
+
+        <ba-stock-table v-if="tab==='stok'" :stocks="stok" :upbjj-list="upbjjList" :kategori-list="kategoriList">
+        </ba-stock-table>
+
+        <do-tracking v-if="tab==='tracking'" :tracking="tracking" :paket="paket">
+        </do-tracking>
+
+
+    </div>
+
+    <script src="js/components/status-badge.js"></script>
+    <script src="js/components/stock-table.js"></script>
+    <script src="js/components/tracking-status-badge.js"></script>
+    <script src="js/components/do-tracking.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

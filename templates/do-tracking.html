@@ -1,0 +1,29 @@
+template: '
+<div class="card">
+    <h2>Tracking Delivery Order</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>No DO</th>
+                <th>Nama</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr v-for="item in tracking" :key="getNomorDO(item)">
+                <td>
+                    {{ getNomorDO(item) }}
+                </td>
+                <td>
+                    {{ getDetailDO(item).nama }}
+                </td>
+                <td>
+                    {{ getDetailDO(item).status }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+'
